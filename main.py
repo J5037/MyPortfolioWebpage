@@ -13,7 +13,9 @@ Bootstrap5(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    mode = request.args.get('darkModeSwitch')
+    print(mode)
+    return render_template('index.html', mode=mode)
 
 
 if __name__ == '__main__':
