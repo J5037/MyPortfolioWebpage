@@ -87,10 +87,10 @@ particlesJS('particles-js',
     "events": {
       "onhover": {
         "enable": false,
-        "mode": "repulse"
+        "mode": "grab"
       },
       "onclick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "resize": true

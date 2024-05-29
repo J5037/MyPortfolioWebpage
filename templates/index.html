@@ -1,3 +1,4 @@
+{% from "bootstrap5/form.html" import render_form %}
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
     <head>
@@ -37,6 +38,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
 {#                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>#}
                         <li>
                             <!--Button toggle for light/dark mode-->
@@ -69,7 +71,7 @@
             <!-- Page Content-->
             <div class="container p-0">
                 <!--About-->
-                <section class="resume-section" id="about" style="height: 100vh">
+                <section class="resume-section" id="about" style="height: 100dvh">
                     <div class="resume-section-content">
                         <h1 class="mb-0">
                             Jor-El
@@ -79,7 +81,10 @@
                             Los Angeles, CA · <!--(310) 427-5859 · -->
                             <a href="mailto:jleos310@gmail.com">jleos310@gmail.com</a>
                         </div>
-                        <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                        <p class="lead mb-2" style="color: var(--bs-gray-600)"><strong> Python Developer</strong></p>
+                        <p class="mb-5">Experienced Python developer with additional expertise in Flask for backend development and
+                            Bootstrap for creating responsive, user-friendly interfaces. Skilled in routing, user authentication, and integrating APIs,
+                            with a strong eye for design and functionality. With a background in information technology & cybersecurity.</p>
                         <div class="social-icons">
                             <a class="social-icon" href="https://www.linkedin.com/in/jor-elleos/"><i class="fab fa-linkedin-in"></i></a>
                             <a class="social-icon" href="https://github.com/J5037"><i class="fab fa-github"></i></a>
@@ -131,7 +136,7 @@
 {#                </section>#}
 {#                <hr class="m-0" />#}
                 <!-- Education-->
-                <section class="resume-section" id="education" style="height: 100vh">
+                <section class="resume-section" id="education" style="height: 100dvh">
                     <div class="resume-section-content">
                         <h2 class="mb-5">Education</h2>
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -156,9 +161,9 @@
                 </section>
                 <hr class="m-0" />
                 <!-- Skills-->
-                <section class="resume-section" id="skills" style="height: 100vh">
+                <section class="resume-section" id="skills" style="height: 100dvh">
                     <div class="resume-section-content">
-                        <h2 class="mb-5">Skills</h2>
+                        <h2 class="mb-5">Skills & Certifications</h2>
                         <div class="subheading mb-3">Programming Languages & Tools</div>
                         <ul class="list-inline dev-icons">
                             <li class="list-inline-item">
@@ -271,14 +276,7 @@
                                 <span class="fa-li"><i class="fas fa-check"></i></span>
                                 CompTIA A+
                             </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Cross Functional Teams
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Agile Development & Scrum
-                            </li>
+
                         </ul>
                     </div>
                 </section>
@@ -287,12 +285,79 @@
                 <section class="resume-section" id="projects" style="height: 100vh">
                     <div class="resume-section-content">
                         <h2 class="mb-5">Projects</h2>
-                        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-12">
+                                <div class="proj">
+{#                                    <a class="llink mb-5" href="https://elprincipenightclub.com/">#}
+                                    <img class="project-img" alt="image of nightclub website" src="/static/assets/img/nightclub.jpg">
+                                    <div class="proj-info" style="font-size: 14pt;">
+                                        <p>
+                                            <strong>Project:</strong>
+                                            Nightclub Website
+                                        </p>
+                                        <p>
+                                            <strong>Technologies:</strong>
+                                            Flask, Bootstrap5, Flask Login, SqlAlchemy, Werkzeug Security & Wtforms
+                                        </p>
+
+                                        <p>
+                                            <strong>Website:</strong>
+                                            <a class="llink mb-5" href="https://elprincipenightclub.com/">View Here</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-10 col-sm-12">
+                                <div class="proj">
+{#                                    <a  class="mb-5" href="https://www.j5037.org/">#}
+                                    <img class="project-img" alt="image of blog website" src="/static/assets/img/blog.jpg">
+{#                                    </a>#}
+                                    <div class="proj-info" style="font-size: 14pt;">
+                                        <p>
+                                            <strong>Project:</strong>
+                                            Blog Website
+                                        </p>
+                                        <p>
+                                            <strong>Technologies:</strong>
+                                            Flask, Bootstrap5, Flask Login, SqlAlchemy, Werkzeug Security, Wtforms, CKEditor, Gravatar
+                                        </p>
+
+                                        <p>
+                                            <strong>Website:</strong>
+                                            <a class="llink mb-5" href="https://www.j5037.org/">View Here</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <hr class="m-0" />
-                <!-- Awards-->
+                <!--Contact-->
+                <section class="resume-section" id="contact" style="height: 100dvh">
+                    <div class="resume-section-content">
+                        <h2 class="mb-5">Contact</h2>
+
+                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                            <div class="flex-grow-1">
+                            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        <ul class="flash">
+                                            {% for message in messages %}
+                                                <strong class="text-center" style="color: var(--bs-primary)">{{ message }}</strong>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                {% endwith %}
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+{#                <!-- Awards-->#}
 {#                <section class="resume-section" id="awards">#}
 {#                    <div class="resume-section-content">#}
 {#                        <h2 class="mb-5">Awards & Certifications</h2>#}
