@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
                 <a class="navbar-brand js-scroll-trigger" href="{{ url_for('home') }}">
                     <span class="d-block d-lg-none">Jor-El Leos</span>
-                    <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/static/assets/img/headshot.jfif" alt="..." /></span>
+                    <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/static/assets/img/headshot.jfif" alt="profile picture" /></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -39,7 +39,6 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-{#                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>#}
                         <li>
                             <!--Button toggle for light/dark mode-->
                             <div class="mt-3">
@@ -78,13 +77,17 @@
                             <span class="text-primary">Leos</span>
                         </h1>
                         <div class="subheading mb-5">
-                            Los Angeles, CA · <!--(310) 427-5859 · -->
+                            Los Angeles, CA ·
                             <a href="mailto:jleos310@gmail.com">jleos310@gmail.com</a>
                         </div>
                         <p class="lead mb-2" style="color: var(--bs-gray-600)"><strong> Python Developer</strong></p>
-                        <p class="mb-5">Experienced Python developer with additional expertise in Flask for backend development and
+                        <p class="mb-5">With a background in information technology & cybersecurity, I am an experienced Python developer with additional expertise in Flask for backend development and
                             Bootstrap for creating responsive, user-friendly interfaces. Skilled in routing, user authentication, and integrating APIs,
-                            with a strong eye for design and functionality. With a background in information technology & cybersecurity.</p>
+                            with a strong eye for design and functionality.</p>
+                        <p class="mb-5">Also specializing in automation, web scraping, and data manipulation/visualization.
+                            Proficient in creating automated workflows, extracting data from diverse web sources, and transforming complex datasets
+                            into actionable insights using libraries such as Pandas and Matplotlib. Adept at streamlining processes and delivering
+                            data-driven solutions.</p>
                         <div class="social-icons">
                             <a class="social-icon" href="https://www.linkedin.com/in/jor-elleos/"><i class="fab fa-linkedin-in"></i></a>
                             <a class="social-icon" href="https://github.com/J5037"><i class="fab fa-github"></i></a>
@@ -262,6 +265,17 @@
                                     </span>
                                 </div>
                             </li>
+                            <li class="list-inline-item">
+                                <div class="skill-icon">
+                                    <svg class="svg-inline--fa fa-flask" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="flask"
+                                         xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="6.6 1.04 18.81 29.91">
+                                        <path d="M11.849 2.813h3.269v6.787h-3.268zM11.849 16.755h3.269v6.789h-3.268zM11.849 11.582h3.269v3.203h-3.268zM6.598 8.393h3.268v22.563h-3.269zM16.992 22.356h3.269v6.787h-3.269zM16.992 8.401h3.269v6.787h-3.269zM16.992 17.171h3.269v3.203h-3.269zM22.134 1.045h3.269v22.563h-3.269z"></path>
+                                        </svg>
+                                    <span class="ttiptext" style="font-size: 14pt; margin-left: -35pt">
+                                            Pandas
+                                    </span>
+                                </div>
+                            </li>
 
 
 
@@ -342,68 +356,24 @@
 
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                             <div class="flex-grow-1">
-                            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
-                                {% with messages = get_flashed_messages() %}
-                                    {% if messages %}
-                                        <ul class="flash">
-                                            {% for message in messages %}
-                                                <strong class="text-center" style="color: var(--bs-primary)">{{ message }}</strong>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                {% endwith %}
+                                {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
                             </div>
-
+                        </div>
+                        <div class="text-start">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <ul class="flash">
+                                        {% for message in messages %}
+                                            <strong style="color: var(--bs-primary)">{{ message }}</strong>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
                         </div>
                     </div>
                 </section>
-{#                <!-- Awards-->#}
-{#                <section class="resume-section" id="awards">#}
-{#                    <div class="resume-section-content">#}
-{#                        <h2 class="mb-5">Awards & Certifications</h2>#}
-{#                        <ul class="fa-ul mb-0">#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                Google Analytics Certified Developer#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                Mobile Web Specialist - Google Certification#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                1#}
-{#                                <sup>st</sup>#}
-{#                                Place - University of Colorado Boulder - Emerging Tech Competition 2009#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                1#}
-{#                                <sup>st</sup>#}
-{#                                Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                2#}
-{#                                <sup>nd</sup>#}
-{#                                Place - University of Colorado Boulder - Emerging Tech Competition 2008#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                1#}
-{#                                <sup>st</sup>#}
-{#                                Place - James Buchanan High School - Hackathon 2006#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>#}
-{#                                3#}
-{#                                <sup>rd</sup>#}
-{#                                Place - James Buchanan High School - Hackathon 2005#}
-{#                            </li>#}
-{#                        </ul>#}
-{#                    </div>#}
-{#                </section>#}
-{#            </div>#}
+                <footer class="text-center pb-1">Copyright © {{ year }} | All Rights Reserved</footer>
+            </div>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

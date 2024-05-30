@@ -67,6 +67,12 @@
   --bs-link-hover-color: var(--bs-gray-500);
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
 }
 
 *,
@@ -11397,4 +11403,8 @@ section.resume-section .resume-section-content {
 
 .proj-info hr {
   margin: 1.5rem 0;
+}
+
+.flash {
+  padding: 0;
 }
