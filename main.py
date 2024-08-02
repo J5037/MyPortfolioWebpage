@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect, flash
+from flask import Flask, render_template, url_for, redirect, flash, abort
 from flask_wtf import FlaskForm
 from flask_bootstrap import Bootstrap5
 from wtforms import StringField, SubmitField, TextAreaField
@@ -44,9 +44,12 @@ def home():
     year = datetime.datetime.now().year
     form = ContactForm()
     if form.validate_on_submit():
-        send_webhook(form.name.data, form.email.data, form.subject.data, form.message.data)
-        flash('Your message has been sent.')
-        return redirect(url_for('home') + '#contact')
+        if 'https://' in str(form.message.data):
+            abort(400)
+        else:
+            send_webhook(form.name.data, form.email.data, form.subject.data, form.message.data)
+            flash('Your message has been sent.')
+            return redirect(url_for('home') + '#contact')
     return render_template('index.html', form=form, year=year)
 
 
