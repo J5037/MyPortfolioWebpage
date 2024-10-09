@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, flash, abort
-from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm, RecaptchaField
 from flask_bootstrap import Bootstrap5
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
@@ -9,6 +9,8 @@ import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('API_KEY')
+app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ.get('RECAP_SITE')
+app.config['RECAPTCHA_PRIVATE_KEY'] = os.environ.get('RECAP_KEY')
 Bootstrap5(app)
 
 
@@ -17,6 +19,7 @@ class ContactForm(FlaskForm):
     email = StringField('Email', [DataRequired()])
     subject = StringField('Subject', [DataRequired()])
     message = TextAreaField('Message', [DataRequired()])
+    recaptcha = RecaptchaField()
     submit = SubmitField('Submit')
 
 
